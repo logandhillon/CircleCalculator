@@ -46,5 +46,22 @@ namespace CircleCalculator
         {
 
         }
+
+        private void formulasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            var aboutForm = new AboutPage();
+            aboutForm.Show();
+        }
+
+        private void newWindowButton_Click(object sender, EventArgs e)
+        {
+            var calcForm = new Calculator();
+            calcForm.Show();
+        }
     }
 }
