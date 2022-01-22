@@ -29,125 +29,179 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutCircleCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tXTDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cIRCDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cIRCDocumentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
+            this.exportRoot = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportTXT = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportJSON = new System.Windows.Forms.ToolStripMenuItem();
+            this.importRoot = new System.Windows.Forms.ToolStripMenuItem();
+            this.importJSON = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.uomLabel = new System.Windows.Forms.Label();
+            this.uomInput = new System.Windows.Forms.TextBox();
+            this.openFormulasButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.newWindowButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearFormButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
             this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "menuStrip";
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newWindowButton,
+            this.toolStripSeparator2,
+            this.importRoot,
+            this.exportRoot});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exportRoot
+            // 
+            this.exportRoot.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportTXT,
+            this.exportJSON});
+            this.exportRoot.Name = "exportRoot";
+            this.exportRoot.Size = new System.Drawing.Size(274, 26);
+            this.exportRoot.Text = "Export";
+            // 
+            // exportTXT
+            // 
+            this.exportTXT.Name = "exportTXT";
+            this.exportTXT.Size = new System.Drawing.Size(224, 26);
+            this.exportTXT.Text = "TXT Document";
+            // 
+            // exportJSON
+            // 
+            this.exportJSON.Name = "exportJSON";
+            this.exportJSON.Size = new System.Drawing.Size(224, 26);
+            this.exportJSON.Text = "JSON Document";
+            this.exportJSON.Click += new System.EventHandler(this.cIRCDocumentToolStripMenuItem_Click);
+            // 
+            // importRoot
+            // 
+            this.importRoot.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importJSON});
+            this.importRoot.Name = "importRoot";
+            this.importRoot.Size = new System.Drawing.Size(274, 26);
+            this.importRoot.Text = "Import";
+            // 
+            // importJSON
+            // 
+            this.importJSON.Name = "importJSON";
+            this.importJSON.Size = new System.Drawing.Size(224, 26);
+            this.importJSON.Text = "JSON Document";
+            this.importJSON.Click += new System.EventHandler(this.cIRCDocumentToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutCircleCalculatorToolStripMenuItem});
+            this.aboutButton,
+            this.toolStripSeparator1,
+            this.openFormulasButton});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.aboutToolStripMenuItem.Text = "Help";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // aboutCircleCalculatorToolStripMenuItem
+            // aboutButton
             // 
-            this.aboutCircleCalculatorToolStripMenuItem.Name = "aboutCircleCalculatorToolStripMenuItem";
-            this.aboutCircleCalculatorToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
-            this.aboutCircleCalculatorToolStripMenuItem.Text = "About Circle Calculator";
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(245, 26);
+            this.aboutButton.Text = "About Circle Calculator";
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
-            // fileToolStripMenuItem
+            // uomLabel
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem,
-            this.importToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.uomLabel.AutoSize = true;
+            this.uomLabel.Location = new System.Drawing.Point(12, 37);
+            this.uomLabel.Name = "uomLabel";
+            this.uomLabel.Size = new System.Drawing.Size(129, 16);
+            this.uomLabel.TabIndex = 1;
+            this.uomLabel.Text = "Unit of Measurement";
+            this.uomLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // exportToolStripMenuItem
+            // uomInput
             // 
-            this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tXTDocumentToolStripMenuItem,
-            this.cIRCDocumentToolStripMenuItem});
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exportToolStripMenuItem.Text = "Export";
+            this.uomInput.Location = new System.Drawing.Point(15, 56);
+            this.uomInput.Name = "uomInput";
+            this.uomInput.Size = new System.Drawing.Size(126, 22);
+            this.uomInput.TabIndex = 2;
             // 
-            // tXTDocumentToolStripMenuItem
+            // openFormulasButton
             // 
-            this.tXTDocumentToolStripMenuItem.Name = "tXTDocumentToolStripMenuItem";
-            this.tXTDocumentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.tXTDocumentToolStripMenuItem.Text = "TXT Document";
+            this.openFormulasButton.Name = "openFormulasButton";
+            this.openFormulasButton.Size = new System.Drawing.Size(245, 26);
+            this.openFormulasButton.Text = "Formulas";
+            this.openFormulasButton.Click += new System.EventHandler(this.formulasToolStripMenuItem_Click);
             // 
-            // cIRCDocumentToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.cIRCDocumentToolStripMenuItem.Name = "cIRCDocumentToolStripMenuItem";
-            this.cIRCDocumentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cIRCDocumentToolStripMenuItem.Text = "JSON Document";
-            this.cIRCDocumentToolStripMenuItem.Click += new System.EventHandler(this.cIRCDocumentToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(242, 6);
             // 
-            // importToolStripMenuItem
+            // newWindowButton
             // 
-            this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cIRCDocumentToolStripMenuItem1});
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.importToolStripMenuItem.Text = "Import";
+            this.newWindowButton.Name = "newWindowButton";
+            this.newWindowButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.newWindowButton.Size = new System.Drawing.Size(274, 26);
+            this.newWindowButton.Text = "New Window";
+            this.newWindowButton.Click += new System.EventHandler(this.newWindowButton_Click);
             // 
-            // cIRCDocumentToolStripMenuItem1
+            // toolStripSeparator2
             // 
-            this.cIRCDocumentToolStripMenuItem1.Name = "cIRCDocumentToolStripMenuItem1";
-            this.cIRCDocumentToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.cIRCDocumentToolStripMenuItem1.Text = "JSON Document";
-            this.cIRCDocumentToolStripMenuItem1.Click += new System.EventHandler(this.cIRCDocumentToolStripMenuItem1_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(271, 6);
             // 
-            // label1
+            // editToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Unit of Measurement";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearFormButton});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Text = "Edit";
             // 
-            // textBox1
+            // clearFormButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 22);
-            this.textBox1.TabIndex = 2;
+            this.clearFormButton.Name = "clearFormButton";
+            this.clearFormButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
+            this.clearFormButton.Size = new System.Drawing.Size(224, 26);
+            this.clearFormButton.Text = "Clear";
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.uomInput);
+            this.Controls.Add(this.uomLabel);
+            this.Controls.Add(this.menuStrip);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Calculator";
             this.Text = "Circle Calculator";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,17 +209,23 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutCircleCalculatorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutButton;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tXTDocumentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cIRCDocumentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cIRCDocumentToolStripMenuItem1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem exportRoot;
+        private System.Windows.Forms.ToolStripMenuItem exportTXT;
+        private System.Windows.Forms.ToolStripMenuItem exportJSON;
+        private System.Windows.Forms.ToolStripMenuItem importRoot;
+        private System.Windows.Forms.ToolStripMenuItem importJSON;
+        private System.Windows.Forms.Label uomLabel;
+        private System.Windows.Forms.TextBox uomInput;
+        private System.Windows.Forms.ToolStripMenuItem openFormulasButton;
+        private System.Windows.Forms.ToolStripMenuItem newWindowButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearFormButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
