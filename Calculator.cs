@@ -49,19 +49,25 @@ namespace CircleCalculator
 
         private void formulasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var formulasForm = new FormulaPage();
+            formulasForm.ShowDialog();
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
         {
             var aboutForm = new AboutPage();
-            aboutForm.Show();
+            aboutForm.ShowDialog();
         }
 
         private void newWindowButton_Click(object sender, EventArgs e)
         {
             var calcForm = new Calculator();
             calcForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
