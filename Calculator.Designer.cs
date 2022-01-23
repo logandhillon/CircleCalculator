@@ -42,6 +42,7 @@
             this.clearFormButton = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.openFormulasButton = new System.Windows.Forms.ToolStripMenuItem();
             this.uomLabel = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.areaLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
             this.uomInput = new System.Windows.Forms.ComboBox();
-            this.sendFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,7 +145,7 @@
             // 
             this.clearFormButton.Name = "clearFormButton";
             this.clearFormButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
-            this.clearFormButton.Size = new System.Drawing.Size(148, 22);
+            this.clearFormButton.Size = new System.Drawing.Size(180, 22);
             this.clearFormButton.Text = "Clear";
             this.clearFormButton.Click += new System.EventHandler(this.clearFormButton_Click);
             // 
@@ -166,6 +166,13 @@
             this.aboutButton.Size = new System.Drawing.Size(197, 22);
             this.aboutButton.Text = "About Circle Calculator";
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
+            // 
+            // sendFeedbackToolStripMenuItem
+            // 
+            this.sendFeedbackToolStripMenuItem.Name = "sendFeedbackToolStripMenuItem";
+            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
+            this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -196,7 +203,6 @@
             this.radiusInput.Name = "radiusInput";
             this.radiusInput.Size = new System.Drawing.Size(96, 20);
             this.radiusInput.TabIndex = 4;
-            this.radiusInput.TextChanged += new System.EventHandler(this.radiusInput_TextChanged);
             // 
             // radiusLabel
             // 
@@ -292,13 +298,6 @@
             this.uomInput.Name = "uomInput";
             this.uomInput.Size = new System.Drawing.Size(121, 21);
             this.uomInput.TabIndex = 12;
-            // 
-            // sendFeedbackToolStripMenuItem
-            // 
-            this.sendFeedbackToolStripMenuItem.Name = "sendFeedbackToolStripMenuItem";
-            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
-            this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
             // 
             // Calculator
             // 

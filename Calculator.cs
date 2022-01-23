@@ -131,11 +131,6 @@ namespace CircleCalculator
             Calculate(false, uomInput.Text, radiusInput, diameterInput, circumfInput, areaInput);
         }
 
-        private void radiusInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void sendFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/LDMGamingYT/CircleCalculator/issues/new/choose");
