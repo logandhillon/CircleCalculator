@@ -55,6 +55,7 @@
             this.areaLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
             this.uomInput = new System.Windows.Forms.ComboBox();
+            this.sendFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,6 +153,7 @@
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutButton,
+            this.sendFeedbackToolStripMenuItem,
             this.toolStripSeparator1,
             this.openFormulasButton});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -291,6 +293,13 @@
             this.uomInput.Size = new System.Drawing.Size(121, 21);
             this.uomInput.TabIndex = 12;
             // 
+            // sendFeedbackToolStripMenuItem
+            // 
+            this.sendFeedbackToolStripMenuItem.Name = "sendFeedbackToolStripMenuItem";
+            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
+            this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +359,7 @@
         private System.Windows.Forms.Label areaLabel;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.ComboBox uomInput;
+        private System.Windows.Forms.ToolStripMenuItem sendFeedbackToolStripMenuItem;
     }
 }
 

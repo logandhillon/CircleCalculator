@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -133,6 +134,12 @@ namespace CircleCalculator
         private void radiusInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void sendFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/LDMGamingYT/CircleCalculator/issues/new/choose");
+            Process.Start(sInfo);
         }
     }
 }
