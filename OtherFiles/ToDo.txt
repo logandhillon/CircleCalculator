@@ -1,0 +1,22 @@
+﻿Must be completed:
+- Add calculate function for diameter, circumference & area ❎
+- Create import for json document ❎
+- Create export for:
+				 .json ❎
+				 .txt ❎
+				 Image file types (png, jpg, bmp), in same dialog ❎
+
+- Create "draw" function for when the circle is done calculating ❎
+- Remove crash on plain text inside any input field upon running Calculate() ❎
+- Create installer and unistaller for program to use on release ❎
+
+Maybe:
+- Create unique icon on release instead of using Win11 calculator icon as placeholder ❎
+
+*MIGHT DO FIRST RELEASE AS .ZIP INSTEAD OF AN INSTALLER .EXE*
+
+Icons: 
+❎ (Not completed)
+✅ (Completed and added)
+🚫 (Removed)
+🔰 (To be removed)
