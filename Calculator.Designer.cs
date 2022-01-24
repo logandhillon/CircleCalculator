@@ -68,8 +68,8 @@
             this.aboutToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(230, 24);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(307, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -81,7 +81,7 @@
             this.importRoot,
             this.exportRoot});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newWindowButton
@@ -89,27 +89,27 @@
             this.newWindowButton.Name = "newWindowButton";
             this.newWindowButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.N)));
-            this.newWindowButton.Size = new System.Drawing.Size(220, 22);
+            this.newWindowButton.Size = new System.Drawing.Size(274, 26);
             this.newWindowButton.Text = "New Window";
             this.newWindowButton.Click += new System.EventHandler(this.newWindowButton_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(271, 6);
             // 
             // importRoot
             // 
             this.importRoot.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importJSON});
             this.importRoot.Name = "importRoot";
-            this.importRoot.Size = new System.Drawing.Size(220, 22);
+            this.importRoot.Size = new System.Drawing.Size(274, 26);
             this.importRoot.Text = "Import";
             // 
             // importJSON
             // 
             this.importJSON.Name = "importJSON";
-            this.importJSON.Size = new System.Drawing.Size(161, 22);
+            this.importJSON.Size = new System.Drawing.Size(200, 26);
             this.importJSON.Text = "JSON Document";
             // 
             // exportRoot
@@ -118,19 +118,19 @@
             this.exportTXT,
             this.exportJSON});
             this.exportRoot.Name = "exportRoot";
-            this.exportRoot.Size = new System.Drawing.Size(220, 22);
+            this.exportRoot.Size = new System.Drawing.Size(274, 26);
             this.exportRoot.Text = "Export";
             // 
             // exportTXT
             // 
             this.exportTXT.Name = "exportTXT";
-            this.exportTXT.Size = new System.Drawing.Size(161, 22);
+            this.exportTXT.Size = new System.Drawing.Size(200, 26);
             this.exportTXT.Text = "TXT Document";
             // 
             // exportJSON
             // 
             this.exportJSON.Name = "exportJSON";
-            this.exportJSON.Size = new System.Drawing.Size(161, 22);
+            this.exportJSON.Size = new System.Drawing.Size(200, 26);
             this.exportJSON.Text = "JSON Document";
             // 
             // editToolStripMenuItem
@@ -138,14 +138,14 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearFormButton});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // clearFormButton
             // 
             this.clearFormButton.Name = "clearFormButton";
             this.clearFormButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
-            this.clearFormButton.Size = new System.Drawing.Size(180, 22);
+            this.clearFormButton.Size = new System.Drawing.Size(187, 26);
             this.clearFormButton.Text = "Clear";
             this.clearFormButton.Click += new System.EventHandler(this.clearFormButton_Click);
             // 
@@ -157,122 +157,118 @@
             this.toolStripSeparator1,
             this.openFormulasButton});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.aboutToolStripMenuItem.Text = "Help";
             // 
             // aboutButton
             // 
             this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(197, 22);
+            this.aboutButton.Size = new System.Drawing.Size(245, 26);
             this.aboutButton.Text = "About Circle Calculator";
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
             // sendFeedbackToolStripMenuItem
             // 
             this.sendFeedbackToolStripMenuItem.Name = "sendFeedbackToolStripMenuItem";
-            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
             this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(242, 6);
             // 
             // openFormulasButton
             // 
             this.openFormulasButton.Name = "openFormulasButton";
-            this.openFormulasButton.Size = new System.Drawing.Size(197, 22);
+            this.openFormulasButton.Size = new System.Drawing.Size(245, 26);
             this.openFormulasButton.Text = "Formulas";
             this.openFormulasButton.Click += new System.EventHandler(this.formulasToolStripMenuItem_Click);
             // 
             // uomLabel
             // 
             this.uomLabel.AutoSize = true;
-            this.uomLabel.Location = new System.Drawing.Point(9, 30);
-            this.uomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uomLabel.Location = new System.Drawing.Point(12, 37);
             this.uomLabel.Name = "uomLabel";
-            this.uomLabel.Size = new System.Drawing.Size(105, 13);
+            this.uomLabel.Size = new System.Drawing.Size(129, 16);
             this.uomLabel.TabIndex = 1;
             this.uomLabel.Text = "Unit of Measurement";
             // 
             // radiusInput
             // 
-            this.radiusInput.Location = new System.Drawing.Point(11, 96);
-            this.radiusInput.Margin = new System.Windows.Forms.Padding(2);
+            this.radiusInput.Location = new System.Drawing.Point(15, 118);
+            this.radiusInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radiusInput.Name = "radiusInput";
-            this.radiusInput.Size = new System.Drawing.Size(96, 20);
+            this.radiusInput.Size = new System.Drawing.Size(127, 22);
             this.radiusInput.TabIndex = 4;
             // 
             // radiusLabel
             // 
             this.radiusLabel.AutoSize = true;
-            this.radiusLabel.Location = new System.Drawing.Point(9, 80);
-            this.radiusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.radiusLabel.Location = new System.Drawing.Point(12, 98);
             this.radiusLabel.Name = "radiusLabel";
-            this.radiusLabel.Size = new System.Drawing.Size(40, 13);
+            this.radiusLabel.Size = new System.Drawing.Size(50, 16);
             this.radiusLabel.TabIndex = 3;
             this.radiusLabel.Text = "Radius";
             // 
             // diameterInput
             // 
-            this.diameterInput.Location = new System.Drawing.Point(11, 139);
-            this.diameterInput.Margin = new System.Windows.Forms.Padding(2);
+            this.diameterInput.Location = new System.Drawing.Point(15, 171);
+            this.diameterInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.diameterInput.Name = "diameterInput";
-            this.diameterInput.Size = new System.Drawing.Size(96, 20);
+            this.diameterInput.Size = new System.Drawing.Size(127, 22);
             this.diameterInput.TabIndex = 6;
             // 
             // diameterLabel
             // 
             this.diameterLabel.AutoSize = true;
-            this.diameterLabel.Location = new System.Drawing.Point(9, 123);
-            this.diameterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.diameterLabel.Location = new System.Drawing.Point(12, 151);
             this.diameterLabel.Name = "diameterLabel";
-            this.diameterLabel.Size = new System.Drawing.Size(49, 13);
+            this.diameterLabel.Size = new System.Drawing.Size(62, 16);
             this.diameterLabel.TabIndex = 5;
             this.diameterLabel.Text = "Diameter";
             // 
             // circumfInput
             // 
-            this.circumfInput.Location = new System.Drawing.Point(121, 96);
-            this.circumfInput.Margin = new System.Windows.Forms.Padding(2);
+            this.circumfInput.Location = new System.Drawing.Point(161, 118);
+            this.circumfInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.circumfInput.Name = "circumfInput";
-            this.circumfInput.Size = new System.Drawing.Size(96, 20);
+            this.circumfInput.Size = new System.Drawing.Size(127, 22);
             this.circumfInput.TabIndex = 8;
             // 
             // circumfLabel
             // 
             this.circumfLabel.AutoSize = true;
-            this.circumfLabel.Location = new System.Drawing.Point(119, 80);
-            this.circumfLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.circumfLabel.Location = new System.Drawing.Point(159, 98);
             this.circumfLabel.Name = "circumfLabel";
-            this.circumfLabel.Size = new System.Drawing.Size(75, 13);
+            this.circumfLabel.Size = new System.Drawing.Size(93, 16);
             this.circumfLabel.TabIndex = 7;
             this.circumfLabel.Text = "Circumference";
             // 
             // areaInput
             // 
-            this.areaInput.Location = new System.Drawing.Point(120, 139);
-            this.areaInput.Margin = new System.Windows.Forms.Padding(2);
+            this.areaInput.Location = new System.Drawing.Point(160, 171);
+            this.areaInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.areaInput.Name = "areaInput";
-            this.areaInput.Size = new System.Drawing.Size(96, 20);
+            this.areaInput.Size = new System.Drawing.Size(127, 22);
             this.areaInput.TabIndex = 10;
             // 
             // areaLabel
             // 
             this.areaLabel.AutoSize = true;
-            this.areaLabel.Location = new System.Drawing.Point(118, 123);
-            this.areaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.areaLabel.Location = new System.Drawing.Point(157, 151);
             this.areaLabel.Name = "areaLabel";
-            this.areaLabel.Size = new System.Drawing.Size(29, 13);
+            this.areaLabel.Size = new System.Drawing.Size(36, 16);
             this.areaLabel.TabIndex = 9;
             this.areaLabel.Text = "Area";
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(65, 165);
+            this.calculateButton.Location = new System.Drawing.Point(87, 203);
+            this.calculateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(96, 23);
+            this.calculateButton.Size = new System.Drawing.Size(128, 28);
             this.calculateButton.TabIndex = 11;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -294,16 +290,17 @@
             "in",
             "ft",
             "yd"});
-            this.uomInput.Location = new System.Drawing.Point(11, 46);
+            this.uomInput.Location = new System.Drawing.Point(15, 57);
+            this.uomInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uomInput.Name = "uomInput";
-            this.uomInput.Size = new System.Drawing.Size(121, 21);
+            this.uomInput.Size = new System.Drawing.Size(126, 24);
             this.uomInput.TabIndex = 12;
             // 
             // Calculator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 200);
+            this.ClientSize = new System.Drawing.Size(307, 246);
             this.Controls.Add(this.uomInput);
             this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.areaInput);
@@ -319,7 +316,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Calculator";
             this.Text = "Circle Calculator";
