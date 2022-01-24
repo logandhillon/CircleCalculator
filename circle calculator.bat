@@ -1,4 +1,4 @@
-@echo on
+@echo off
 title Dimensions of Circle Calculator
 
 echo What is the unit of measurement? (e.g. in, cm, mm, etc)
