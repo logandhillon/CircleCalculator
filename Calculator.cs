@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace CircleCalculator
 {
     public partial class Calculator : Form
     {
+        public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\file.txt";
+
         public Calculator()
         {
             InitializeComponent();
@@ -40,35 +43,58 @@ namespace CircleCalculator
         {
             foreach (Control control in form.Controls)
             {
-                if (control is TextBox)
+                if (control is NumericUpDown)
                 {
-                    TextBox textBox = (TextBox)control;
-                    textBox.Text = null;
+                    NumericUpDown NumericUpDown = (NumericUpDown)control;
+                    NumericUpDown.Text = null;
                 }
 
                 if (control is ComboBox)
                 {
                     ComboBox comboBox = (ComboBox)control;
-                    if (comboBox.Items.Count > 0)
-                        comboBox.SelectedIndex = 0;
+                    comboBox.Text = null;
                 }
             }
         }
 
-        public static void Calculate(Boolean includeUom, String uom, TextBox radiusInput, TextBox diameterInput, TextBox circumfInput, TextBox areaInput)
+        public static void Calculate(Boolean includeUom, String uom, NumericUpDown radiusInput, NumericUpDown diameterInput, NumericUpDown circumfInput, NumericUpDown areaInput)
         {
-            TextBox firstFilledTextBox = GetFirstFilledTextBox(radiusInput, diameterInput, circumfInput, areaInput);
+            NumericUpDown firstFilledTextBox = GetFirstFilledTextBox(radiusInput, diameterInput, circumfInput, areaInput);
             if (firstFilledTextBox == radiusInput)
             {
                 double rad = double.Parse(radiusInput.Text, System.Globalization.CultureInfo.InvariantCulture);
                 double dia = rad * 2;
-                double cir = dia * 3.14159;
-                double area = Math.Pow(rad, 2) * 3.14159;
+                double cir = Math.Round(dia * 3.14159, 2);
+                double area = Math.Round(Math.Pow(rad, 2) * 3.14159, 2);
+                ExportNumToTextBox(includeUom, uom, radiusInput, rad, diameterInput, dia, circumfInput, cir, areaInput, area);
+            }
+            else if (firstFilledTextBox == diameterInput)
+            {
+                double dia = double.Parse(diameterInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+                double rad = dia / 2;
+                double cir = Math.Round(dia * 3.14159, 2);
+                double area = Math.Round(Math.Pow(rad, 2) * 3.14159, 2);
+                ExportNumToTextBox(includeUom, uom, radiusInput, rad, diameterInput, dia, circumfInput, cir, areaInput, area);
+            }
+            else if (firstFilledTextBox == circumfInput)
+            {
+                double cir = double.Parse(circumfInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+                double dia = Math.Round(cir / 3.14159, 2);
+                double rad = Math.Round(dia / 2, 2);
+                double area = Math.Round(Math.Pow(rad, 2) * 3.14159, 2);
+                ExportNumToTextBox(includeUom, uom, radiusInput, rad, diameterInput, dia, circumfInput, cir, areaInput, area);
+            }
+            else if (firstFilledTextBox == areaInput)
+            {
+                double area = double.Parse(areaInput.Text, System.Globalization.CultureInfo.InvariantCulture);
+                double rad = Math.Round(Math.Sqrt(area / 3.14159), 2);
+                double dia = rad * 2;
+                double cir = Math.Round(dia * 3.14159, 2);
                 ExportNumToTextBox(includeUom, uom, radiusInput, rad, diameterInput, dia, circumfInput, cir, areaInput, area);
             }
         }
 
-        public static void ExportNumToTextBox(Boolean includeUom, String uom, TextBox radiusInput, double rad, TextBox diameterInput, double dia, TextBox circumfInput, double cir, TextBox areaInput, double area)
+        public static void ExportNumToTextBox(Boolean includeUom, String uom, NumericUpDown radiusInput, double rad, NumericUpDown diameterInput, double dia, NumericUpDown circumfInput, double cir, NumericUpDown areaInput, double area)
         {
             if (includeUom)
             {
@@ -97,7 +123,7 @@ namespace CircleCalculator
                 areaInput.Text = area.ToString();
             }
         }
-        public static TextBox GetFirstFilledTextBox(TextBox radiusInput, TextBox diameterInput, TextBox circumfInput, TextBox areaInput)
+        public static NumericUpDown GetFirstFilledTextBox(NumericUpDown radiusInput, NumericUpDown diameterInput, NumericUpDown circumfInput, NumericUpDown areaInput)
         {
             if (!String.IsNullOrWhiteSpace(radiusInput.Text))
             {
@@ -135,6 +161,53 @@ namespace CircleCalculator
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/LDMGamingYT/CircleCalculator/issues/new/choose");
             Process.Start(sInfo);
+        }
+
+        private void exportTXT_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = "unknown.txt";
+            savefile.Filter = "Text Document (*.txt)|*.txt|Rich Text Document (*.rtf)|*.rtf|All files (*.*)|*.*";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(savefile.FileName, false, System.Text.Encoding.Unicode))
+                {
+                    sw.WriteLine("*THIS DOCUMENT WAS EXPORTED USING LDM'S CIRCLE CALCULATOR*");
+                    sw.WriteLine();
+                    sw.WriteLine("The dimensions of your exported circle are:");
+                    sw.WriteLine("Radius: " + radiusInput.Text);
+                    sw.WriteLine("Diameter: " + diameterInput.Text);
+                    sw.WriteLine("Circumference: " + circumfInput.Text);
+                    sw.WriteLine("Area: " + areaInput.Text);
+                }
+            }
+        }
+
+        public static void exportConfigStyle(NumericUpDown radiusInput, NumericUpDown diameterInput, NumericUpDown circumfInput, NumericUpDown areaInput)
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = "unknown.txt";
+            savefile.Filter = "JavaScript Object Notation (*.json)|*.json|All files (*.*)|*.*";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(savefile.FileName, false, System.Text.Encoding.Unicode))
+                {
+                    sw.WriteLine("*THIS DOCUMENT WAS EXPORTED USING LDM'S CIRCLE CALCULATOR*");
+                    sw.WriteLine();
+                    sw.WriteLine("The dimensions of your exported circle are:");
+                    sw.WriteLine("Radius: " + radiusInput.Text);
+                    sw.WriteLine("Diameter: " + diameterInput.Text);
+                    sw.WriteLine("Circumference: " + circumfInput.Text);
+                    sw.WriteLine("Area: " + areaInput.Text);
+                }
+            }
+        }
+
+        private void exportJSON_Click(object sender, EventArgs e)
+        {
+            //exportConfigStyle(radiusInput, diameterInput, circumfInput, areaInput);
         }
     }
 }

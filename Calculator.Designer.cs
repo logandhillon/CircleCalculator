@@ -46,17 +46,22 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.openFormulasButton = new System.Windows.Forms.ToolStripMenuItem();
             this.uomLabel = new System.Windows.Forms.Label();
-            this.radiusInput = new System.Windows.Forms.TextBox();
             this.radiusLabel = new System.Windows.Forms.Label();
-            this.diameterInput = new System.Windows.Forms.TextBox();
             this.diameterLabel = new System.Windows.Forms.Label();
-            this.circumfInput = new System.Windows.Forms.TextBox();
             this.circumfLabel = new System.Windows.Forms.Label();
-            this.areaInput = new System.Windows.Forms.TextBox();
             this.areaLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
             this.uomInput = new System.Windows.Forms.ComboBox();
+            this.radiusInput = new System.Windows.Forms.NumericUpDown();
+            this.diameterInput = new System.Windows.Forms.NumericUpDown();
+            this.areaInput = new System.Windows.Forms.NumericUpDown();
+            this.circumfInput = new System.Windows.Forms.NumericUpDown();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radiusInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diameterInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.areaInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circumfInput)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -124,14 +129,16 @@
             // exportTXT
             // 
             this.exportTXT.Name = "exportTXT";
-            this.exportTXT.Size = new System.Drawing.Size(200, 26);
+            this.exportTXT.Size = new System.Drawing.Size(224, 26);
             this.exportTXT.Text = "TXT Document";
+            this.exportTXT.Click += new System.EventHandler(this.exportTXT_Click);
             // 
             // exportJSON
             // 
             this.exportJSON.Name = "exportJSON";
-            this.exportJSON.Size = new System.Drawing.Size(200, 26);
+            this.exportJSON.Size = new System.Drawing.Size(224, 26);
             this.exportJSON.Text = "JSON Document";
+            this.exportJSON.Click += new System.EventHandler(this.exportJSON_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -195,14 +202,6 @@
             this.uomLabel.TabIndex = 1;
             this.uomLabel.Text = "Unit of Measurement";
             // 
-            // radiusInput
-            // 
-            this.radiusInput.Location = new System.Drawing.Point(15, 118);
-            this.radiusInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radiusInput.Name = "radiusInput";
-            this.radiusInput.Size = new System.Drawing.Size(127, 22);
-            this.radiusInput.TabIndex = 4;
-            // 
             // radiusLabel
             // 
             this.radiusLabel.AutoSize = true;
@@ -211,14 +210,6 @@
             this.radiusLabel.Size = new System.Drawing.Size(50, 16);
             this.radiusLabel.TabIndex = 3;
             this.radiusLabel.Text = "Radius";
-            // 
-            // diameterInput
-            // 
-            this.diameterInput.Location = new System.Drawing.Point(15, 171);
-            this.diameterInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.diameterInput.Name = "diameterInput";
-            this.diameterInput.Size = new System.Drawing.Size(127, 22);
-            this.diameterInput.TabIndex = 6;
             // 
             // diameterLabel
             // 
@@ -229,14 +220,6 @@
             this.diameterLabel.TabIndex = 5;
             this.diameterLabel.Text = "Diameter";
             // 
-            // circumfInput
-            // 
-            this.circumfInput.Location = new System.Drawing.Point(161, 118);
-            this.circumfInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.circumfInput.Name = "circumfInput";
-            this.circumfInput.Size = new System.Drawing.Size(127, 22);
-            this.circumfInput.TabIndex = 8;
-            // 
             // circumfLabel
             // 
             this.circumfLabel.AutoSize = true;
@@ -245,14 +228,6 @@
             this.circumfLabel.Size = new System.Drawing.Size(93, 16);
             this.circumfLabel.TabIndex = 7;
             this.circumfLabel.Text = "Circumference";
-            // 
-            // areaInput
-            // 
-            this.areaInput.Location = new System.Drawing.Point(160, 171);
-            this.areaInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.areaInput.Name = "areaInput";
-            this.areaInput.Size = new System.Drawing.Size(127, 22);
-            this.areaInput.TabIndex = 10;
             // 
             // areaLabel
             // 
@@ -266,10 +241,10 @@
             // calculateButton
             // 
             this.calculateButton.Location = new System.Drawing.Point(87, 203);
-            this.calculateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.calculateButton.Margin = new System.Windows.Forms.Padding(4);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(128, 28);
-            this.calculateButton.TabIndex = 11;
+            this.calculateButton.TabIndex = 17;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
@@ -291,25 +266,85 @@
             "ft",
             "yd"});
             this.uomInput.Location = new System.Drawing.Point(15, 57);
-            this.uomInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uomInput.Margin = new System.Windows.Forms.Padding(4);
             this.uomInput.Name = "uomInput";
             this.uomInput.Size = new System.Drawing.Size(126, 24);
             this.uomInput.TabIndex = 12;
+            // 
+            // radiusInput
+            // 
+            this.radiusInput.DecimalPlaces = 2;
+            this.radiusInput.Location = new System.Drawing.Point(15, 118);
+            this.radiusInput.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
+            this.radiusInput.Name = "radiusInput";
+            this.radiusInput.Size = new System.Drawing.Size(127, 22);
+            this.radiusInput.TabIndex = 13;
+            // 
+            // diameterInput
+            // 
+            this.diameterInput.DecimalPlaces = 2;
+            this.diameterInput.Location = new System.Drawing.Point(15, 170);
+            this.diameterInput.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
+            this.diameterInput.Name = "diameterInput";
+            this.diameterInput.Size = new System.Drawing.Size(127, 22);
+            this.diameterInput.TabIndex = 15;
+            // 
+            // areaInput
+            // 
+            this.areaInput.DecimalPlaces = 2;
+            this.areaInput.Location = new System.Drawing.Point(160, 170);
+            this.areaInput.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
+            this.areaInput.Name = "areaInput";
+            this.areaInput.Size = new System.Drawing.Size(127, 22);
+            this.areaInput.TabIndex = 16;
+            // 
+            // circumfInput
+            // 
+            this.circumfInput.DecimalPlaces = 2;
+            this.circumfInput.Location = new System.Drawing.Point(160, 117);
+            this.circumfInput.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
+            this.circumfInput.Name = "circumfInput";
+            this.circumfInput.Size = new System.Drawing.Size(127, 22);
+            this.circumfInput.TabIndex = 14;
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.CheckFileExists = true;
+            this.saveFileDialog.DefaultExt = "txt";
+            this.saveFileDialog.FileName = "circle_calculator_results";
+            this.saveFileDialog.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
+            this.saveFileDialog.Title = "Export Circle Calculator Results to TXT Document";
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 246);
+            this.Controls.Add(this.areaInput);
+            this.Controls.Add(this.circumfInput);
+            this.Controls.Add(this.diameterInput);
+            this.Controls.Add(this.radiusInput);
             this.Controls.Add(this.uomInput);
             this.Controls.Add(this.calculateButton);
-            this.Controls.Add(this.areaInput);
             this.Controls.Add(this.areaLabel);
-            this.Controls.Add(this.circumfInput);
             this.Controls.Add(this.circumfLabel);
-            this.Controls.Add(this.diameterInput);
             this.Controls.Add(this.diameterLabel);
-            this.Controls.Add(this.radiusInput);
             this.Controls.Add(this.radiusLabel);
             this.Controls.Add(this.uomLabel);
             this.Controls.Add(this.menuStrip);
@@ -322,6 +357,10 @@
             this.Text = "Circle Calculator";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radiusInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diameterInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.areaInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circumfInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,17 +384,18 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearFormButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.TextBox radiusInput;
         private System.Windows.Forms.Label radiusLabel;
-        private System.Windows.Forms.TextBox diameterInput;
         private System.Windows.Forms.Label diameterLabel;
-        private System.Windows.Forms.TextBox circumfInput;
         private System.Windows.Forms.Label circumfLabel;
-        private System.Windows.Forms.TextBox areaInput;
         private System.Windows.Forms.Label areaLabel;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.ComboBox uomInput;
         private System.Windows.Forms.ToolStripMenuItem sendFeedbackToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown radiusInput;
+        private System.Windows.Forms.NumericUpDown diameterInput;
+        private System.Windows.Forms.NumericUpDown areaInput;
+        private System.Windows.Forms.NumericUpDown circumfInput;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
